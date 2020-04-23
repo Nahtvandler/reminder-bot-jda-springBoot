@@ -18,9 +18,9 @@ public class ReminderService {
     public static String setReminder(String content, MessageChannel channel) {
         List<String> params = new ArrayList<>();
 
-        params.addAll(Arrays.asList(content.split(" ")));
+        params.addAll(Arrays.asList(content.split(Const.SPACE)));
         if (params.size() < CommandEnum.REMINDER.getParams().size()-1) {
-            return "Not enought params";
+            return "Not enough params";
         }
 
         Reminder reminder = new Reminder();
