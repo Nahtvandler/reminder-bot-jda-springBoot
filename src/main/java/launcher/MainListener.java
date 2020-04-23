@@ -1,3 +1,5 @@
+package launcher;
+
 import enums.CommandEnum;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;

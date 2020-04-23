@@ -1,3 +1,5 @@
+package launcher;
+
 import enums.CommandEnum;
 import exceptions.WrongParameterEception;
 import net.dv8tion.jda.api.entities.MessageChannel;

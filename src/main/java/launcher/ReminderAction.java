@@ -1,3 +1,5 @@
+package launcher;
+
 import net.dv8tion.jda.api.entities.MessageChannel;
 
 public class ReminderAction implements Runnable {

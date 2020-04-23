@@ -1,3 +1,5 @@
+package launcher;
+
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -10,16 +12,16 @@ import javax.security.auth.login.LoginException;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(".")
+//@ComponentScan(".")
 public class Main extends ListenerAdapter {
     static JDA jda;
 
     public static void main(String[] args) throws LoginException {
         SpringApplication.run(Main.class);
 
-        //JDABuilder builder = JDABuilder.createDefault("NzAyNDU2MzIyMTYzMjEyMzAw.XqFtUw.jgYqP9FDNWPHFtY9B5tRvr4VqZA");
-        //builder.addEventListeners(new MainListener());
-        //jda = builder.build();
+        JDABuilder builder = JDABuilder.createDefault("NzAyNDU2MzIyMTYzMjEyMzAw.XqGI-g.s1Yn7RZVTf7NVeWx0k9mmnLi-7o");
+        builder.addEventListeners(new MainListener());
+        jda = builder.build();
 
 //        ScheduledThreadPoolExecutor implementation = (ScheduledThreadPoolExecutor) Scheduled_Executor_Service;
 //        int size = implementation.getQueue().size();
