@@ -17,9 +17,9 @@ public class Main extends ListenerAdapter {
     public static void main(String[] args) throws LoginException {
         SpringApplication.run(Main.class);
 
-        JDABuilder builder = JDABuilder.createDefault("NzAyNDU2MzIyMTYzMjEyMzAw.XqFtUw.jgYqP9FDNWPHFtY9B5tRvr4VqZA");
-        builder.addEventListeners(new MainListener());
-        jda = builder.build();
+        //JDABuilder builder = JDABuilder.createDefault("NzAyNDU2MzIyMTYzMjEyMzAw.XqFtUw.jgYqP9FDNWPHFtY9B5tRvr4VqZA");
+        //builder.addEventListeners(new MainListener());
+        //jda = builder.build();
 
 //        ScheduledThreadPoolExecutor implementation = (ScheduledThreadPoolExecutor) Scheduled_Executor_Service;
 //        int size = implementation.getQueue().size();
