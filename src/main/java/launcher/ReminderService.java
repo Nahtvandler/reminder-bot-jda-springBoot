@@ -7,10 +7,7 @@ import pojos.RemindTime;
 import pojos.Reminder;
 import utils.Const;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -42,9 +39,11 @@ public class ReminderService {
         //reminder.setExcludeDays(Arrays.asList(params.get(5).split(",")));
 
         Calendar currDayCal = Calendar.getInstance();
+        currDayCal.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
 
         RemindTime remindTime = reminder.getRemindTime();
         Calendar reminderDayCal = Calendar.getInstance();
+        reminderDayCal.setTimeZone(TimeZone.getTimeZone("Europe/Moscow"));
         reminderDayCal.set(Calendar.HOUR_OF_DAY, remindTime.getHour());
         reminderDayCal.set(Calendar.MINUTE, remindTime.getMinute());
         reminderDayCal.set(Calendar.SECOND, 00);
