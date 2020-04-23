@@ -19,7 +19,8 @@ public class Main extends ListenerAdapter {
     public static void main(String[] args) throws LoginException {
         SpringApplication.run(Main.class);
 
-        JDABuilder builder = JDABuilder.createDefault("NzAyNDU2MzIyMTYzMjEyMzAw.XqGI-g.s1Yn7RZVTf7NVeWx0k9mmnLi-7o");
+        String token = System.getenv("DISCORD_BOT_TOKEN");
+        JDABuilder builder = JDABuilder.createDefault(token);
         builder.addEventListeners(new MainListener());
         jda = builder.build();
 
