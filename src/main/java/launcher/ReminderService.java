@@ -47,7 +47,7 @@ public class ReminderService {
         reminderDayCal.set(Calendar.HOUR_OF_DAY, remindTime.getHour());
         reminderDayCal.set(Calendar.MINUTE, remindTime.getMinute());
         reminderDayCal.set(Calendar.SECOND, 00);
-        if (reminderDayCal.after(currDayCal)) {
+        if (reminderDayCal.before(currDayCal)) {
             reminderDayCal.add(Calendar.DAY_OF_MONTH, 1);
         }
 
