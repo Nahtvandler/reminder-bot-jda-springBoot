@@ -6,7 +6,8 @@ import java.util.List;
 
 public enum  CommandEnum {
     HELP("$help", "lists available commands"),
-    REMINDER("$reminder", "sets a reminder, for details enter $reminder", "time", "period", "message");
+    REMINDER("$reminder", "sets a reminder, for details enter $reminder", "time", "period", "message"),
+    RANDOM("$random", "select a random user from the channel", "channelName");
 
     String command;
     String description;
