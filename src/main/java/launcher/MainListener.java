@@ -65,6 +65,8 @@ public class MainListener extends ListenerAdapter {
                 setVolume(event, getFirstParametr(content));
             } else if (content.contains(CommandEnum.NEXT.getCommand())) {
                 nextTrack(event);
+            } else if (content.contains(CommandEnum.TRACK.getCommand())) {
+                channel.sendMessage(prepareInfoAboutCurrentTrack(event)).queue();
             }
         } catch (NotEnoughParamsException e) {
             channel.sendMessage(e.getMessage()).queue();
@@ -217,4 +219,9 @@ public class MainListener extends ListenerAdapter {
     private void nextTrack(MessageReceivedEvent event) {
         PlayerManager.getInstance().nextTrack(event.getGuild());
     }
+
+    private String prepareInfoAboutCurrentTrack(MessageReceivedEvent event) {
+        return PlayerManager.getInstance().getPlayingTrackInfo(event.getGuild());
+    }
+
 }

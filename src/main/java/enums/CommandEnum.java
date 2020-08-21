@@ -13,7 +13,8 @@ public enum  CommandEnum {
     PLAY("$play", "play a track from youtube", "link"),
     STOP("$stop", "stop playing a track"),
     VOLUME("$volume", "adjusts playback volume", "volume"),
-    NEXT("$next", "switches to the next track if there is one");
+    NEXT("$next", "switches to the next track if there is one"),
+    TRACK("$track", "returns the current track");
 
     String command;
     String description;

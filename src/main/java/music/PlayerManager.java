@@ -88,17 +88,17 @@ public class PlayerManager {
     }
 
     public void setVolume(Guild guild, String volume) {
-        GuildMusicManager musicManager = musicManagers.get(guild.getIdLong());
+        GuildMusicManager musicManager = getGuildMusicManager(guild);
         musicManager.player.setVolume(Integer.parseInt(volume));
     }
 
     public void stop(Guild guild) {
-        GuildMusicManager musicManager = musicManagers.get(guild.getIdLong());
+        GuildMusicManager musicManager = getGuildMusicManager(guild);
         musicManager.scheduler.stopTrack();
     }
 
     public void nextTrack(Guild guild) {
-        GuildMusicManager musicManager = musicManagers.get(guild.getIdLong());
+        GuildMusicManager musicManager = getGuildMusicManager(guild);
         musicManager.scheduler.nextTrack();
     }
 
@@ -108,5 +108,16 @@ public class PlayerManager {
         }
 
         return INSTANCE;
+    }
+
+    public String getPlayingTrackInfo(Guild guild) {
+        GuildMusicManager manager = getGuildMusicManager(guild);
+        AudioTrack audioTrack = manager.scheduler.getPlayingTrack();
+
+        if (audioTrack != null) {
+            return audioTrack.getInfo().title;
+        } else {
+            return "the track is not currently playing";
+        }
     }
 }
