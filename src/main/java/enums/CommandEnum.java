@@ -7,7 +7,13 @@ import java.util.List;
 public enum  CommandEnum {
     HELP("$help", "lists available commands"),
     REMINDER("$reminder", "sets a reminder, for details enter $reminder", "time", "period", "message"),
-    RANDOM("$random", "select a random user from the channel", "channelName");
+    RANDOM("$random", "select a random user from the channel", "channelName"),
+    JOIN("$join", "command to join the sender's voice channel"),
+    LEAVE("$leave", "command to disconnect from voice chat"),
+    PLAY("$play", "play a track from youtube", "link"),
+    STOP("$stop", "stop playing a track"),
+    VOLUME("$volume", "adjusts playback volume", "volume"),
+    NEXT("$next", "switches to the next track if there is one");
 
     String command;
     String description;
