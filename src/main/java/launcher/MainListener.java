@@ -118,8 +118,6 @@ public class MainListener extends ListenerAdapter {
     }
 
     private String prepareRandomUserForChannelMessage(MessageReceivedEvent event, String content) {
-        playDefaultTrack(event);
-
         String channelName = null;
         try {
             channelName = getFirstParametr(content);
